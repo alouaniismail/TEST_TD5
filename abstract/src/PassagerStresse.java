@@ -9,7 +9,7 @@ public class PassagerStresse extends PassagerStandard
 
     void nouvelArret(Vehicule v, int numeroArret)
     {
-	if(this.getDest()-numeroArret==0 && v.aPlaceDebout()){
+	if(this.getDest()-numeroArret==3 && v.aPlaceDebout()){
 	    v.arretDemanderDebout(this);
 	}
 	super.nouvelArret(v,numeroArret);
