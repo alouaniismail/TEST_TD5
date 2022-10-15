@@ -37,7 +37,13 @@ Voila, Le 1er commit est fait.
 RIEN: on fait un override ; du coup, on injecte toutes les fonctions suspectibles d'etre affectees dans les 2 codes et voila rien ne va changer en terme d'utilisation de ces deux-là.
 =========================================================2.La classe abstraite PassagerAbstrait:
 >>>
-
+(on ajoute monterDans le meme qu'avant dans PassagerStresse.java)reponse-- --.. ///.
+.
+.
+.
+PARTIE4: factorisation des tests:
+(les parties d'avant sont bien ecrites dans les comments des codes)
+>>>
 
 
 
