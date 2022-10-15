@@ -1,0 +1,52 @@
+>NOUVEAUX caractères: y compris ce qu'on a fait avant.
+IMPORTANT:
+l'introduction des relations types/sous-types (par exemple: Vehicule & transport => Autobus) (*), ajouter (changer le passager en un nouveau) devient facile).
+<=>principe des classes non concretes.
+PassageIndecis par exemple sera une nouvelle classe sous-type (lien est-un) de Passager et Usager bien sur comme (*).
+QUESTIONS IMPORTANTES concernant le td3:
+td0: C=>JAVA (pas d'implémentation MAIS compréhension du code UTILE).
+td1: tests sur Jauge et Position avec quelques questions de routine.
+td2: implémentation avec des options de compilation( -d/-cp).
+td3: remaniemement et rassemblement.
+td4: masquage d'informations au client. 
+>TD5:
+RAS avant , la même chose qu'on avait ecrit.
+RAPPEL:
+
+La methode abstraite agit sur la portée des méthodes des classes concretes en les rendant pas publics donc l'utilisateur qui est pas dans le paquet n'a pas une vision de ces méthodes et on implémente les 2 classes concretes avec des classes abstraites. Et donc, on importe les tec.Usager/Transport et les tec.PassagerStandard/Autobus pour permettre l'instanciation (constructeur publique et la classe publique mais le saut vers les parametres interfaces qui sont pas publiques ici abstract class Vehicule et abstract class Passager rend l'accès impossible aux méthodes dont la portée n'est pas publique).
+
+La méthode interface nous a permis de faire une classe qui instancie le tout en statiques avec final non heritable et non instanciable via un constructeur qui fait rien declare en private. Ainsi, dans SimpleInterface on importe tec.Transport/Usager et tec.fabriquerTec seulementavec les bons types "" arguments dans les tests faussaires ainsi que le test global/executer. (Makefile) et le PassagerStandard ainsi que Autobus sont en class seulement pas de public class et les interfaces en interface pas de public interface au tout debut bien sur. Voila. L'utilisateur va faire un saut aux interfaces et vu que pas public l'implémentation ne saura pas comment faire pour accéder aux méthodes de PassagerStandard (portée paquet). On rend les classes concretes internes aux paquetage. Et on fait les constructeurs a part. L'appel de monterDans et allerArretSuivant de base vont generer des appels au sein du paquetage via Usager/Trnasport donc pas de probleme. 
+
+Revenons au TD5 --propos--:
+>>
+Le passager indecis/stresse ont un comportement particulier a chaque arret presque et a la montee => nouvelArret et monterDans dans PassagerStandard d'après la documentation.
+2.super.NOMmethode(...args) permet d'appeler la partie du code dérivé à développer APRES.
+3.super() pour appeler le constructeur. 4. les getters peuvent marcher vu que c'est private.
+Voilà. 
+Passons à l'implémentation dans ./src et ./tst(...).
+
+1.1
+**Rq1:
+On peut pas faire Passager passager=new PassagerIndecis(,) dans la methode abstract car:
+cela se fait si le compilateur detecte un extends passager comme etant une 'implementation' de la classe semi-complete abstraite passager. (++)
+Meme dans src et tst normaux impossible car:
+Il voit sans les implements que le contenu (les methodes).
+Voila, Le 1er commit est fait.
+=========================================================SUITE:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
